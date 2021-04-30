@@ -1,4 +1,4 @@
-fetch('./rss.json')
+fetch('./rss.json?v=20210430')
 .then(async function (response) {
   const res = await response.json();
   const items = res.items;
