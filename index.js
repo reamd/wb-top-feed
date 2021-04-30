@@ -60,7 +60,7 @@ async function main() {
     console.log(`successfully create ./dist`);
 
     await fs.writeFile('./dist/rss.json', feed.json1());
-    console.log(`successfully write rss.json`, feed.items[0]);
+    console.log(`successfully write rss.json`);
 
     await fs.writeFile('./dist/rss.xml', feed.rss2());
     console.log(`successfully write rss.xml`);
