@@ -11,7 +11,7 @@ const timeout = setTimeout(
   30000,
 );
 
-const URL = 'https://api.hmister.cn/weibo';
+const URL = 'https://v1.alapi.cn/api/new/wbtop';
 
 const feed = new Feed({
   title: '新浪微博热点',
@@ -43,11 +43,11 @@ async function main() {
     const items = result.data;
     console.log(`successfully parse the feed.`);
 
-    items.forEach(item => {
+    items.forEach((item, idx) => {
       feed.addItem({
-        title: item.name,
-        id: item.id,
-        link: item.url,
+        title: item.hot_word,
+        id: idx + 1,
+        link: `https://m.weibo.cn/search?containerid=100103type%3D1%26t%3D10%26q%3D%23${item.hot_word}%23`,
       });
     });
 
