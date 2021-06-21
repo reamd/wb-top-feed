@@ -11,7 +11,7 @@ const timeout = setTimeout(
   30000,
 );
 
-const URL = 'https://v1.alapi.cn/api/new/wbtop';
+const URL = 'https://v2.alapi.cn/api/new/wbtop';
 
 const feed = new Feed({
   title: '新浪微博热点',
@@ -26,7 +26,7 @@ const feed = new Feed({
 });
 
 async function main() {
-    const response = await fetch(URL, {
+    const response = await fetch(URL + '?token=u6prpGW01GQMtCCN', {
       headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10130'},
       signal: controller.signal
     });
